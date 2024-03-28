@@ -29,7 +29,7 @@ dist-ssr
 /djangoapp/project/local_settings.py
 gunicorn-error-log
 __localcode
-/data/
+/backend/data
 
 # Django #
 *.log
