@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # My apps
     'job_application',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,7 @@ MEDIA_ROOT = DATA_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user.CustomUser'
+
+CORS_ORIGIN_ALLOW_ALL = True 
