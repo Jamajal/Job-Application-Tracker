@@ -1,38 +1,64 @@
-# Job-Application-Tracker
+# Job Application Tracker
 
-Esse é um projeto pessoal que estou criando para compor meu portfólio. Consiste em um site em que é possível você manter registro de duas candidaturas de vagas de emprego.
+Este é um projeto pessoal que estou criando para compor meu portfólio. Consiste em um site em que é possível manter registro de candidaturas a vagas de emprego.
 
 ## Comandos
 
 ### Iniciar aplicação backend
 
-Para criar a aplicação backend pela primeira vez:  
-(Ir para root do backend)  
-cd backend
+Para criar a aplicação backend pela primeira vez:
 
-(Criar o ambiente virtual para instalar os pacotes)  
-python -m venv venv
+1. Navegue até o diretório raiz do backend:
 
-(Ativar o ambiente virtual no Windows, em outros so o comando é um pouco diferente)  
-.\venv\Scripts\activate
+   ```bash
+   cd backend
+   ```
 
-(Criar os containers no docker)  
-docker-compose up --build
+2. Crie e ative o ambiente virtual para instalar os pacotes:
 
-Com isto a aplicação será criada e estará rodando através de containers do docker e já estará rodando.
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate  # No Windows
+   ```
+
+3. Crie os containers no Docker:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+4. Caso a pasta `data` tenha sido rastreada pelo Git, remova-a do controle de versão:
+   ```bash
+   git rm --cached -r data
+   ```
 
 ### Rodar aplicação backend já criada
 
-Uma vez que você já tenha feito os passos para iniciar a aplicação e deseja rodar ela posteriormente:  
-(Ir para root do backend)  
-cd backend
+Se a aplicação já foi criada anteriormente e deseja-se rodá-la novamente:
 
-(Ativar o ambiente virtual no Windows, em outros so o comando é um pouco diferente)  
-.\venv\Scripts\activate
+1. Navegue até o diretório raiz do backend:
 
-(Rodar os containers no docker)  
-docker-compose up
+   ```bash
+   cd backend
+   ```
 
-(Para rodar um comando django com a aplicação rodando)  
-docker-compose run (comando django)  
-Ex: docker-compose run python startapp new_app
+2. Ative o ambiente virtual:
+
+   ```bash
+   .\venv\Scripts\activate  # No Windows
+   ```
+
+3. Inicie os containers no Docker:
+
+   ```bash
+   docker-compose up
+   ```
+
+4. Para rodar um comando Django com a aplicação em execução:
+   ```bash
+   docker-compose run (comando django)
+   ```
+   Exemplo:
+   ```bash
+   docker-compose run python startapp new_app
+   ```
