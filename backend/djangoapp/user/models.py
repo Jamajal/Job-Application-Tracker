@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth import get_user_model
 
-class CustomUserManager(BaseUserManager):
+""" class CustomUserManager(BaseUserManager):
     def _create_user(self, email, username, password, **extra_fields):
         if not email:
             raise ValueError('User Must provide an email!')
@@ -43,4 +43,4 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = ['username', 'password']
 
     def __str__(self):
-        return self.email or ''
+        return self.email or '' """

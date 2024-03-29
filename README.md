@@ -56,9 +56,9 @@ Se a aplicação já foi criada anteriormente e deseja-se rodá-la novamente:
 
 4. Para rodar um comando Django com a aplicação em execução:
    ```bash
-   docker-compose run (comando django)
+   docker-compose run --rm djangoapp (comando django)
    ```
    Exemplo:
    ```bash
-   docker-compose run python startapp new_app
+   docker-compose run --rm djangoapp python startapp new_app
    ```

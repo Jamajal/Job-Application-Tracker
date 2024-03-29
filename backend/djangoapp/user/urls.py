@@ -1,13 +1,15 @@
 
 from django.contrib import admin
-from django.urls import path, re_path
-from .views import login, signup, test_token, read_users, put_detail_delete_user, login_google, update_not_first_time, get_user_classgroups
+from django.urls import path
+from rest_framework_simplejwt.views import (
+    TokenRefreshView,
+)
+from .views import MyTokenObtainPairView, signup, read_users, read_update_delete_user
 
 urlpatterns = [
-    path('api/v1/users/', read_users),
-    path('api/v1/users/<int:pk>', put_detail_delete_user),
-    #path('api/v1/users/registration/', UserCreate.as_view()),
-    re_path('api/v1/auth/login', login),
-    re_path('api/v1/signup', signup),
-    re_path('api/v1/test_token', test_token),
+    path('api/v1/user/token', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/user/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/user/signup', signup, name='Signup'),
+    path('api/v1/users', read_users, name='Get users'),
+    path('api/v1/users/<int:pk>', read_update_delete_user, name='Get/Patch/Delete user'),
 ]
